@@ -3,7 +3,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { LogOut, LayoutDashboard, ShoppingBag, Settings } from "lucide-react";
+import { LogOut, LayoutDashboard, ShoppingBag } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +23,6 @@ export default function DashboardLayout({
   const navItems = [
     { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
     { href: "/shop", label: "View Shop", icon: ShoppingBag },
-    { href: "/dashboard/settings", label: "Settings", icon: Settings },
   ];
 
   return (
