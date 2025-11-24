@@ -8,6 +8,7 @@ import connectDB from "@/lib/db";
 import Product from "@/models/Product";
 import { ShoppingCart, Heart, Search, Star, TrendingUp } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
+import Image from "next/image";
 
 async function getProducts() {
   await connectDB();
@@ -49,10 +50,11 @@ async function ProductGrid() {
           <div className="relative overflow-hidden">
             {product.imageUrl ? (
               <div className="aspect-square relative bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-                <img
-                  src={product.imageUrl}
+                <Image
+                  src={product.imageUrl ??''}
                   alt={product.name}
                   className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
+                  layout="fill"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0">

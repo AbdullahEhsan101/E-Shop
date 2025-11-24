@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface Product {
   _id: string;
@@ -187,11 +188,13 @@ export default function DashboardPage() {
                   >
                     <TableCell>
                       {product.imageUrl ? (
-                        <img
+                        <Image
                           src={product.imageUrl}
                           alt={product.name}
-                          className="h-12 w-12 rounded-md object-cover shadow-sm"
-                        />
+                          className="w-12 rounded-md object-cover shadow-sm"
+                          width={80}
+                          height={80}
+                      />
                       ) : (
                         <div className="h-12 w-12 rounded-md bg-muted flex items-center justify-center">
                           <Package className="h-6 w-6 text-muted-foreground" />

@@ -23,6 +23,7 @@ import {
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function EditProductPage({
   params,
@@ -272,10 +273,11 @@ export default function EditProductPage({
               <div className="border rounded-lg overflow-hidden">
                 {imagePreview ? (
                   <div className="aspect-square relative bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-                    <img
+                    <Image
                       src={imagePreview}
                       alt="Preview"
                       className="object-cover w-full h-full"
+                     layout="fill"
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
                       }}

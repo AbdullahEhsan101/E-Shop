@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function AddProductPage() {
   const router = useRouter();
@@ -216,9 +217,10 @@ export default function AddProductPage() {
               <div className="border rounded-lg overflow-hidden">
                 {imagePreview ? (
                   <div className="aspect-square relative bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-                    <img
+                    <Image
                       src={imagePreview}
                       alt="Preview"
+                      layout="fill"
                       className="object-cover w-full h-full"
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
