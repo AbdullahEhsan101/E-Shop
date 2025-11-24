@@ -220,7 +220,7 @@ export default function AddProductPage() {
                     <Image
                       src={imagePreview}
                       alt="Preview"
-                      layout="fill"
+                      fill
                       className="object-cover w-full h-full"
                       onError={(e) => {
                         e.currentTarget.style.display = "none";

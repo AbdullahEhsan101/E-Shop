@@ -277,7 +277,7 @@ export default function EditProductPage({
                       src={imagePreview}
                       alt="Preview"
                       className="object-cover w-full h-full"
-                     layout="fill"
+                      fill
                       onError={(e) => {
                         e.currentTarget.style.display = "none";
                       }}

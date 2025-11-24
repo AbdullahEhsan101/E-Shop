@@ -54,7 +54,7 @@ async function ProductGrid() {
                   src={product.imageUrl ??''}
                   alt={product.name}
                   className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700 ease-out"
-                  layout="fill"
+                  fill
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0">
