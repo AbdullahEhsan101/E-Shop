@@ -33,7 +33,7 @@ export async function POST(req: Request) {
 
         const result = ProductSchema.safeParse(body);
         if (!result.success) {
-            return NextResponse.json({ error: result.error.errors }, { status: 400 });
+            return NextResponse.json({ error: result.error.issues }, { status: 400 });
         }
 
         const product = await Product.create(result.data);

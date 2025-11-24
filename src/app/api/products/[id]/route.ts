@@ -38,7 +38,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 
         const result = ProductSchema.safeParse(body);
         if (!result.success) {
-            return NextResponse.json({ error: result.error.errors }, { status: 400 });
+            return NextResponse.json({ error: result.error.issues }, { status: 401 });
         }
 
         const product = await Product.findByIdAndUpdate(id, result.data, { new: true });
