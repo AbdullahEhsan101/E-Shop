@@ -10,6 +10,8 @@ import { ShoppingCart, Heart, Search, Star, TrendingUp } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 async function getProducts() {
   await connectDB();
   const products = await Product.find({}).sort({ createdAt: -1 });
